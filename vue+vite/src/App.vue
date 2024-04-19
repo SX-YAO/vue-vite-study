@@ -1,6 +1,11 @@
 <script setup lang="ts">
 import test from '@components/test.vue';
-import MonacoEditor from './components/monaco-editor/MonacoEditor.vue';
+import { DFS, a } from './utils/study.ts';
+// import MonacoEditor from './components/monaco-editor/MonacoEditor.vue';
+
+
+console.log(111, a('22234444556'));
+
 </script>
 
 <template>
@@ -9,7 +14,7 @@ import MonacoEditor from './components/monaco-editor/MonacoEditor.vue';
       slot
     </div>
   </test>
-  <MonacoEditor/>
+  <!-- <MonacoEditor/> -->
 </template>
 
 <style scoped>
