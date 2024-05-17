@@ -10,7 +10,8 @@ export default defineConfig({
   })],
   resolve: {
     alias: {
-      '@components': resolve(__dirname, 'src/components')
+      '@components': resolve(__dirname, 'src/components'),
+      '@util': resolve(__dirname, 'src/utils/index.ts'),
     }
   },
 });

@@ -52,8 +52,39 @@ const a = (str: string) => {
   return [...set1][0][0]; 
 };
 
+const flat = (array: Array<unknown>) => {
+  return [...new Set([].concat(...array.map((item) => (Array.isArray(item) ? flat(item) : item))).sort((a, b) => a-b))];
+};
+
+// const flat2 = (array: Array<unknown>) => {
+//   const newArray = [];
+//   while(array.some((item) => item))
+// }
+
+
+const study30 = (arr1, arr2) => {
+  if (!Array.isArray(arr1) || !Array.isArray(arr2)) {
+    return;
+  }
+  let index = 0;
+  // 兜底
+  for( let i = 0; i < arr2.length; i++ ) {
+    const reg = new RegExp(arr2[i]);
+    for(let k = index; k <= arr1.length; k++) {
+      if (!reg.test(arr1[k])) {
+        arr1.splice(k, 0, arr2[i]);
+        index = k + 1;
+        break;
+      }
+    }
+  }
+  return arr1;
+};
+
 export {
   DFS,
   BFS,
-  a
+  a,
+  flat,
+  study30,
 };
